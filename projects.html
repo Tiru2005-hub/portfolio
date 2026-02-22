@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Tiru krishna E – Projects: Responsive Web App, AI Government Scheme Finder, Telemedicine Chatbot, Certificate Validation System." />
+    <title>Projects | Tiru krishna E Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div id="loader" class="loader-overlay">
+        <div class="loader-content">
+            <div class="loader-logo">TK</div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring loader-ring--2"></div>
+            <div class="loader-ring loader-ring--3"></div>
+            <p class="loader-text">Loading Projects...</p>
+            <div class="loader-bar">
+                <div class="loader-bar-fill" id="loaderBar"></div>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="particleCanvas"></canvas>
+
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><span class="logo-bracket">&lt;</span><span
+                    class="logo-name">TK</span><span class="logo-bracket">/&gt;</span></a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="certifications.html" class="nav-link">Certifications</a>
+                <a href="workshops.html" class="nav-link">Workshops</a>
+                <a href="events.html" class="nav-link">Events</a>
+                <a href="projects.html" class="nav-link active">Projects</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+                <span class="ham-line"></span><span class="ham-line"></span><span class="ham-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <nav class="mobile-nav-links">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="about.html" class="mobile-link">About</a>
+            <a href="certifications.html" class="mobile-link">Certifications</a>
+            <a href="workshops.html" class="mobile-link">Workshops</a>
+            <a href="events.html" class="mobile-link">Events</a>
+            <a href="projects.html" class="mobile-link">Projects</a>
+            <a href="contact.html" class="mobile-link">Contact</a>
+        </nav>
+    </div>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section projects-section" style="padding-top:130px;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What I've Built</span>
+                <h2 class="section-title">My <span class="glow-text">Projects</span></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- Project 1 -->
+                <div class="project-card reveal-up">
+                    <div class="project-num">01</div>
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-globe"></i></div>
+                        <div class="project-status">Live</div>
+                    </div>
+                    <h4 class="project-title">Responsive Web Application</h4>
+                    <p class="project-desc">
+                        A fully responsive, cross-device compatible web application with dynamic UI components,
+                        real-time updates using Firebase, and seamless user experience across mobile, tablet, and
+                        desktop.
+                    </p>
+                    <div class="project-tech">
+                        <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React.js</span><span>Firebase</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/" target="_blank" rel="noopener" class="project-btn">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="project-btn project-btn--outline">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+                        </a>
+                    </div>
+                    <div class="project-glow"></div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card reveal-up" style="animation-delay:.15s">
+                    <div class="project-num">02</div>
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-robot"></i></div>
+                        <div class="project-status project-status--purple">AI Project</div>
+                    </div>
+                    <h4 class="project-title">AI Government Scheme Finder</h4>
+                    <p class="project-desc">
+                        An AI-powered platform that helps rural citizens discover and understand government welfare
+                        schemes using NLP-based chatbot, multilingual support, and a smart recommendation engine.
+                    </p>
+                    <div class="project-tech">
+                        <span>Python</span><span>NLP</span><span>Flask</span><span>React.js</span><span>MongoDB</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/" target="_blank" rel="noopener" class="project-btn">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="project-btn project-btn--outline">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+                        </a>
+                    </div>
+                    <div class="project-glow project-glow--purple"></div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card reveal-up" style="animation-delay:.3s">
+                    <div class="project-num">03</div>
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                        <div class="project-status project-status--cyan">Healthcare</div>
+                    </div>
+                    <h4 class="project-title">Telemedicine Chatbot</h4>
+                    <p class="project-desc">
+                        Smart healthcare chatbot enabling patients to book appointments, get symptom analysis,
+                        and receive preliminary medical guidance using AI. Built during internship at MedSocio
+                        HealthTech.
+                    </p>
+                    <div class="project-tech">
+                        <span>Python</span><span>Dialogflow</span><span>Node.js</span><span>MySQL</span><span>React.js</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/" target="_blank" rel="noopener" class="project-btn">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="project-btn project-btn--outline">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+                        </a>
+                    </div>
+                    <div class="project-glow project-glow--cyan"></div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card reveal-up" style="animation-delay:.45s">
+                    <div class="project-num">04</div>
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-certificate"></i></div>
+                        <div class="project-status">Security</div>
+                    </div>
+                    <h4 class="project-title">Certificate Validation System</h4>
+                    <p class="project-desc">
+                        A blockchain-inspired certificate verification platform with QR code generation, digital
+                        signatures, and tamper-proof validation for academic and professional certificates.
+                    </p>
+                    <div class="project-tech">
+                        <span>React.js</span><span>Node.js</span><span>MongoDB</span><span>QR
+                            Code</span><span>JWT</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/" target="_blank" rel="noopener" class="project-btn">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="project-btn project-btn--outline">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+                        </a>
+                    </div>
+                    <div class="project-glow"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><span class="logo-bracket">&lt;</span><span class="logo-name">TK</span><span
+                        class="logo-bracket">/&gt;</span></div>
+                <p class="footer-tagline">Crafting Digital Experiences with Anti-Gravity Innovation</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a><a href="certifications.html">Certifications</a>
+                    <a href="projects.html">Projects</a><a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/tiru-krishna08" target="_blank" rel="noopener"
+                        aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="mailto:Tirukrishna.it27@gmail.com" aria-label="Email"><i
+                            class="fa-solid fa-envelope"></i></a>
+                </div>
+                <p class="footer-copy">&copy; 2026 <span class="glow-text">Tiru krishna E</span>. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+        <i class="fa-solid fa-chevron-up"></i>
+        <div class="scroll-top-ring"></div>
+    </button>
+    <script src="main.js"></script>
+</body>
+
+</html>

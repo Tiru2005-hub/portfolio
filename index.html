@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Tiru krishna E – B.Tech IT Student, Web Developer & Cloud Enthusiast. Welcome to my Anti-Gravity Portfolio." />
+  <title>Home | Tiru krishna E Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- LOADER -->
+  <div id="loader" class="loader-overlay">
+    <div class="loader-content">
+      <div class="loader-logo">TK</div>
+      <div class="loader-ring"></div>
+      <div class="loader-ring loader-ring--2"></div>
+      <div class="loader-ring loader-ring--3"></div>
+      <p class="loader-text">Launching Anti-Gravity Systems...</p>
+      <div class="loader-bar">
+        <div class="loader-bar-fill" id="loaderBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARTICLES -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><span class="logo-bracket">&lt;</span><span class="logo-name">TK</span><span
+          class="logo-bracket">/&gt;</span></a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="certifications.html" class="nav-link">Certifications</a>
+        <a href="workshops.html" class="nav-link">Workshops</a>
+        <a href="events.html" class="nav-link">Events</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+        <span class="ham-line"></span><span class="ham-line"></span><span class="ham-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-link">Home</a>
+      <a href="about.html" class="mobile-link">About</a>
+      <a href="certifications.html" class="mobile-link">Certifications</a>
+      <a href="workshops.html" class="mobile-link">Workshops</a>
+      <a href="events.html" class="mobile-link">Events</a>
+      <a href="projects.html" class="mobile-link">Projects</a>
+      <a href="contact.html" class="mobile-link">Contact</a>
+    </nav>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="shape-container">
+      <div class="float-shape shape-1"></div>
+      <div class="float-shape shape-2"></div>
+      <div class="float-shape shape-3"></div>
+      <div class="float-shape shape-4"></div>
+      <div class="float-shape shape-5"></div>
+      <div class="float-shape shape-6"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-photo-wrapper reveal-up">
+        <div class="hero-photo-frame">
+          <img src="Tiru.jpg" alt="Tiru krishna E" class="hero-profile-photo" />
+        </div>
+      </div>
+      <div class="hero-greeting reveal-up"><span class="greeting-badge">👋 Hello, World!</span></div>
+      <h1 class="hero-name reveal-up">
+        <span class="name-line">Tiru</span>
+        <span class="name-line name-glow">krishna E</span>
+      </h1>
+      <div class="hero-tagline reveal-up">
+        <span class="tagline-prefix">I'm a </span>
+        <span class="tagline-typed" id="heroTyped"></span>
+        <span class="tagline-cursor">|</span>
+      </div>
+      <p class="hero-bio reveal-up">
+        Passionate IT student crafting next-gen web experiences with Python, Java, JavaScript &amp; Cloud Computing.
+      </p>
+      <div class="hero-cta reveal-up">
+        <a href="projects.html" class="btn btn-primary">
+          <span>View My Work</span><span><i class="fa-solid fa-rocket"></i></span>
+          <div class="btn-glow"></div>
+        </a>
+        <a href="contact.html" class="btn btn-secondary">
+          <span>Contact Me</span><span><i class="fa-solid fa-paper-plane"></i></span>
+        </a>
+      </div>
+      <div class="hero-socials reveal-up">
+        <a href="https://www.linkedin.com/in/tiru-krishna08" target="_blank" rel="noopener" class="social-link"
+          aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/" target="_blank" rel="noopener" class="social-link" aria-label="GitHub"><i
+            class="fa-brands fa-github"></i></a>
+        <a href="mailto:Tirukrishna.it27@gmail.com" class="social-link" aria-label="Email"><i
+            class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="scroll-indicator" id="scrollIndicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Explore</span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo"><span class="logo-bracket">&lt;</span><span class="logo-name">TK</span><span
+            class="logo-bracket">/&gt;</span></div>
+        <p class="footer-tagline">Crafting Digital Experiences with Anti-Gravity Innovation</p>
+        <div class="footer-links">
+          <a href="index.html">Home</a><a href="certifications.html">Certifications</a>
+          <a href="projects.html">Projects</a><a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/tiru-krishna08" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+              class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i
+              class="fa-brands fa-github"></i></a>
+          <a href="mailto:Tirukrishna.it27@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <p class="footer-copy">&copy; 2026 <span class="glow-text">Tiru krishna E</span>. All Rights Reserved. Made with
+          <span class="heart">❤️</span> &amp; ☕
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+    <i class="fa-solid fa-chevron-up"></i>
+    <div class="scroll-top-ring"></div>
+  </button>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

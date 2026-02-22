@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Dashboard: Real-time Bus Capacity Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease; /* Smooth background transition */
+        }
+        .tab-active {
+            border-bottom-color: #0ea5e9;
+            color: #0ea5e9;
+        }
+        .component-node {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease;
+            position: relative; /* For the focus indicator */
+            outline: none; /* Remove default focus outline */
+        }
+        .component-node:hover {
+            transform: translateY(-5px);A
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .component-node:focus {
+            box-shadow: 0 0 0 3px #0ea5e9, 0 0 0 6px rgba(14, 165, 233, 0.4); /* Custom focus ring */
+        }
+
+        /* Status colors with subtle animations */
+        .status-safe { background-color: #22c55e; }
+        .status-warning { background-color: #f59e0b; }
+        .status-overload { background-color: #ef4444; }
+        .status-override { background-color: #6366f1; }
+
+        .status-indicator-animation {
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.03); opacity: 0.95; }
+        }
+
+        /* Progress bar animation */
+        #capacityBar {
+            transition: width 0.5s ease-out, background-color 0.3s ease-in-out;
+        }
+
+        /* Alert message animation */
+        .alert-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        .alert-fade-out {
+            animation: fadeOut 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeOut {
+            from { opacity: 1; transform: translateY(0); }
+            to { opacity: 0; transform: translateY(10px); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-7xl">
+
+        <header class="text-center mb-12 animate-fade-in">
+            <h1 class="text-3xl sm:text-4xl font-bold text-slate-900">Real-time Bus Capacity Management System</h1>
+            <p class="mt-2 text-lg text-slate-600">An Interactive Overview of an Innovative Solution for Public Transport Safety</p>
+        </header>
+
+        <main>
+            <section id="dashboard" class="mb-16 p-6 bg-white rounded-2xl shadow-xl border border-slate-100">
+                <h2 class="text-2xl font-bold mb-4 text-center text-slate-900">Live System Dashboard</h2>
+                <p class="text-center text-slate-600 mb-8 max-w-3xl mx-auto">This is a simulation of the system in action. Use the buttons to add or remove passengers and see how the system responds in real-time. The maximum capacity is set to 60 for this demonstration.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                    <div class="md:col-span-1 flex flex-col items-center space-y-4 p-4 bg-slate-100 rounded-lg shadow-inner">
+                        <h3 class="font-semibold text-lg text-slate-700">Control Panel</h3>
+                        <div class="flex space-x-4">
+                            <button id="addPassengerBtn" class="px-6 py-2 bg-sky-500 text-white font-semibold rounded-lg shadow-md hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-opacity-75 transition-all duration-200 ease-in-out transform hover:scale-105 active:scale-95" aria-label="Add one passenger">Enter (+)</button>
+                            <button id="removePassengerBtn" class="px-6 py-2 bg-amber-500 text-white font-semibold rounded-lg shadow-md hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-opacity-75 transition-all duration-200 ease-in-out transform hover:scale-105 active:scale-95" aria-label="Remove one passenger">Exit (-)</button>
+                        </div>
+                        <button id="mercyOverrideBtn" class="w-full mt-4 px-6 py-2 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75 transition-all duration-200 ease-in-out transform hover:scale-105 active:scale-95" aria-label="Activate mercy override">Mercy Override</button>
+                    </div>
+
+                    <div class="md:col-span-2 p-6 bg-slate-800 text-white rounded-xl shadow-2xl relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-700 opacity-75 rounded-xl -z-10"></div>
+                        <div class="flex justify-between items-center mb-4 relative z-10">
+                            <h3 class="font-bold text-xl text-slate-50">Bus Status</h3>
+                            <div id="statusIndicator" class="w-28 text-center py-1 rounded-full text-sm font-semibold status-safe transition-colors duration-300 shadow">SAFE</div>
+                        </div>
+                        <div class="relative pt-1 mb-4 relative z-10">
+                            <div class="overflow-hidden h-4 text-xs flex rounded-full bg-slate-600">
+                                <div id="capacityBar" style="width: 0%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center status-safe"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-slate-300 relative z-10">
+                            <div>
+                                <span class="font-semibold text-3xl" id="passengerCount" aria-live="polite">0</span>
+                                <span class="text-lg">/ 60 Passengers</span>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-lg">Gate Status:</span>
+                                <span id="gateStatus" class="text-lg text-green-400 font-bold">OPEN</span>
+                            </div>
+                        </div>
+                        <div id="alertMessage" class="mt-4 text-center font-semibold text-lg h-6 text-yellow-300 relative z-10" aria-live="assertive"></div>
+                    </div>
+                </div>
+            </section>
+            
+            <hr class="my-12 border-slate-200">
+
+            <section id="problem-solution" class="mb-16">
+                <h2 class="text-2xl font-bold mb-8 text-center text-slate-900">The Challenge and Our Innovative Solution</h2>
+                <p class="text-center text-slate-600 mb-8 max-w-3xl mx-auto">Overcrowding in public buses is a critical safety issue. Our system directly addresses the shortcomings of manual checks by providing an automated, reliable, and enforceable solution.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="p-6 bg-white rounded-2xl shadow-lg border-l-4 border-red-500 hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-xl font-bold mb-3 text-red-700 flex items-center"><span class="mr-2 text-2xl">⚠️</span>The Problem: Manual & Unreliable</h3>
+                        <ul class="space-y-3 text-slate-600 list-disc list-inside">
+                            <li><b>Serious Safety Risks:</b> Overloaded buses are prone to accidents and make emergency evacuations difficult.</li>
+                            <li><b>Inconsistent Manual Checks:</b> Relies on conductor's judgment, which is prone to error and inconsistency, especially during peak hours.</li>
+                            <li><b>No Real-time Data:</b> Drivers and passengers have no visibility of the current passenger count, leading to unintentional overloading.</li>
+                            <li><b>Increased Stress & Delays:</b> Causes stress for transport staff and leads to bus breakdowns, affecting service efficiency.</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-white rounded-2xl shadow-lg border-l-4 border-green-500 hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-xl font-bold mb-3 text-green-700 flex items-center"><span class="mr-2 text-2xl">✅</span>Our Solution: Automated & Safe</h3>
+                        <ul class="space-y-3 text-slate-600 list-disc list-inside">
+                            <li><b>Automated Counting:</b> Uses IR sensors for accurate, real-time passenger counting, eliminating human error.</li>
+                            <li><b>Real-time Alerts & Display:</b> An LCD screen shows the live count, while a buzzer alerts the driver when capacity is reached.</li>
+                            <li><b>Physical Enforcement:</b> A solenoid gate physically stops boarding when the bus is full, ensuring compliance.</li>
+                            <li><b>Flexible & Accountable:</b> A "Mercy Override" feature for special cases, with all overrides logged for depot audit.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <hr class="my-12 border-slate-200">
+
+            <section id="architecture" class="mb-16">
+                <h2 class="text-2xl font-bold mb-4 text-center text-slate-900">System Architecture</h2>
+                <p class="text-center text-slate-600 mb-8 max-w-3xl mx-auto">Our system is built on a modular architecture controlled by an Arduino microcontroller. Click on each component below to learn more about its function within the system.</p>
+                
+                <div class="p-6 bg-white rounded-2xl shadow-lg">
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center mb-8">
+                        <div class="component-node p-4 bg-sky-100 rounded-lg cursor-pointer flex flex-col items-center justify-center" data-component="arduino" tabindex="0" role="button" aria-expanded="false" aria-controls="component-details">
+                            <div class="text-3xl mb-2">🧠</div>
+                            <h4 class="font-semibold">Arduino MCU</h4>
+                        </div>
+                        <div class="component-node p-4 bg-sky-100 rounded-lg cursor-pointer flex flex-col items-center justify-center" data-component="ir" tabindex="0" role="button" aria-expanded="false" aria-controls="component-details">
+                            <div class="text-3xl mb-2">👀</div>
+                            <h4 class="font-semibold">IR Sensors</h4>
+                        </div>
+                        <div class="component-node p-4 bg-sky-100 rounded-lg cursor-pointer flex flex-col items-center justify-center" data-component="lcd" tabindex="0" role="button" aria-expanded="false" aria-controls="component-details">
+                            <div class="text-3xl mb-2">🖥️</div>
+                            <h4 class="font-semibold">LCD Display</h4>
+                        </div>
+                        <div class="component-node p-4 bg-sky-100 rounded-lg cursor-pointer flex flex-col items-center justify-center" data-component="gate" tabindex="0" role="button" aria-expanded="false" aria-controls="component-details">
+                            <div class="text-3xl mb-2">🚧</div>
+                            <h4 class="font-semibold">Solenoid Gate</h4>
+                        </div>
+                        <div class="component-node p-4 bg-sky-100 rounded-lg cursor-pointer col-span-2 md:col-span-1 lg:col-span-1 flex flex-col items-center justify-center" data-component="alerts" tabindex="0" role="button" aria-expanded="false" aria-controls="component-details">
+                            <div class="text-3xl mb-2">🔔</div>
+                            <h4 class="font-semibold">Alert System</h4>
+                        </div>
+                    </div>
+                    <div id="component-details" class="p-6 bg-slate-100 rounded-lg min-h-[120px] flex items-center justify-center transition-all duration-300 ease-in-out">
+                        <p class="text-slate-500">Click on a component above to see its details.</p>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="my-12 border-slate-200">
+
+            <section id="future" class="mb-16">
+                <h2 class="text-2xl font-bold mb-4 text-center text-slate-900">Future Enhancements</h2>
+                <p class="text-center text-slate-600 mb-8 max-w-3xl mx-auto">This system is a robust foundation. The following enhancements could transform it into a fully integrated smart transit solution.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-semibold text-lg mb-2 text-sky-700 flex items-center"><span class="mr-2 text-xl">☁️</span>Cloud & IoT Integration</h3>
+                        <p class="text-slate-600 text-sm">Transmit real-time data from the entire bus fleet to a central cloud server for advanced analytics and city-wide monitoring.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-semibold text-lg mb-2 text-sky-700 flex items-center"><span class="mr-2 text-xl">🗺️</span>GPS & Mobile App</h3>
+                        <p class="text-slate-600 text-sm">Integrate GPS to show passengers bus locations and live capacity on a mobile app, allowing them to better plan their journeys.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-semibold text-lg mb-2 text-sky-700 flex items-center"><span class="mr-2 text-xl">👁️‍🗨️</span>Advanced Sensors</h3>
+                        <p class="text-slate-600 text-sm">Utilize 3D depth cameras or LiDAR for even higher counting accuracy, especially in dense crowds, overcoming IR sensor limitations.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-semibold text-lg mb-2 text-sky-700 flex items-center"><span class="mr-2 text-xl">📊</span>Predictive Analytics</h3>
+                        <p class="text-slate-600 text-sm">Use machine learning on historical data to predict future passenger loads, enabling proactive dispatching and preventing overload.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-16 py-6 border-t border-slate-200">
+            <p class="text-slate-500 text-sm">Project by Tiru Krishna. E, Surya Prakash. VK, & Sylanand. A</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Dashboard Simulation Elements
+            const passengerCountEl = document.getElementById('passengerCount');
+            const capacityBarEl = document.getElementById('capacityBar');
+            const statusIndicatorEl = document.getElementById('statusIndicator');
+            const gateStatusEl = document.getElementById('gateStatus');
+            const alertMessageEl = document.getElementById('alertMessage');
+            const addPassengerBtn = document.getElementById('addPassengerBtn');
+            const removePassengerBtn = document.getElementById('removePassengerBtn');
+            const mercyOverrideBtn = document.getElementById('mercyOverrideBtn');
+
+            // System Architecture Elements
+            const componentNodes = document.querySelectorAll('.component-node');
+            const componentDetailsEl = document.getElementById('component-details');
+
+            // Dashboard State Variables
+            let passengerCount = 0;
+            const maxCapacity = 60;
+            const warningThreshold = 50; // Adjusted warning threshold for better feedback
+            let mercyOverrideActive = false;
+            let mercyTimer;
+
+            /**
+             * Updates the visual state of the dashboard based on passenger count.
+             */
+            function updateDashboard() {
+                passengerCountEl.textContent = passengerCount;
+                const capacityPercentage = (passengerCount / maxCapacity) * 100;
+                capacityBarEl.style.width = `${capacityPercentage}%`;
+
+                // Clear previous classes and animations
+                statusIndicatorEl.classList.remove('status-safe', 'status-warning', 'status-overload', 'status-override', 'status-indicator-animation');
+                capacityBarEl.classList.remove('status-safe', 'status-warning', 'status-overload', 'status-override');
+                gateStatusEl.classList.remove('text-red-400', 'text-green-400', 'text-indigo-400');
+                
+                // Clear previous alert message animation
+                alertMessageEl.classList.remove('alert-fade-in', 'alert-fade-out');
+                alertMessageEl.textContent = ''; // Clear content initially
+
+                let statusText = 'SAFE';
+                let gateText = 'OPEN';
+                let gateColorClass = 'text-green-400';
+                let alertText = '';
+                let indicatorClass = 'status-safe';
+
+                if (mercyOverrideActive) {
+                    indicatorClass = 'status-override';
+                    statusText = 'OVERRIDE';
+                    alertText = 'MERCY OVERRIDE ACTIVE! (5s)';
+                    gateText = 'OPEN (TEMP)';
+                    gateColorClass = 'text-indigo-400';
+                    statusIndicatorEl.classList.add('status-indicator-animation'); // Add pulse for override
+                } else if (passengerCount >= maxCapacity) {
+                    indicatorClass = 'status-overload';
+                    statusText = 'OVERLOAD';
+                    alertText = 'BUZZER: CAPACITY REACHED! Gate Closed!';
+                    gateText = 'CLOSED';
+                    gateColorClass = 'text-red-400';
+                    statusIndicatorEl.classList.add('status-indicator-animation'); // Add pulse for overload
+                } else if (passengerCount >= warningThreshold) {
+                    indicatorClass = 'status-warning';
+                    statusText = 'WARNING';
+                    alertText = 'Approaching capacity limit!';
+                    gateColorClass = 'text-green-400';
+                } else {
+                    indicatorClass = 'status-safe';
+                    statusText = 'SAFE';
+                    gateColorClass = 'text-green-400';
+                }
+
+                // Apply updates
+                statusIndicatorEl.classList.add(indicatorClass);
+                capacityBarEl.classList.add(indicatorClass);
+                statusIndicatorEl.textContent = statusText;
+                gateStatusEl.textContent = gateText;
+                gateStatusEl.classList.add(gateColorClass);
+
+                // Animate alert message
+                if (alertText) {
+                    alertMessageEl.textContent = alertText;
+                    alertMessageEl.classList.add('alert-fade-in');
+                } else {
+                    alertMessageEl.classList.add('alert-fade-out');
+                }
+            }
+
+            // Event Listeners for Dashboard Controls
+            addPassengerBtn.addEventListener('click', () => {
+                if (mercyOverrideActive) {
+                    passengerCount++; // Allow adding during override
+                } else if (passengerCount < maxCapacity) {
+                    passengerCount++;
+                }
+                updateDashboard();
+            });
+
+            removePassengerBtn.addEventListener('click', () => {
+                if (passengerCount > 0) {
+                    passengerCount--;
+                }
+                // If count drops below max during override, it ends
+                if (passengerCount < maxCapacity && mercyOverrideActive) {
+                    clearTimeout(mercyTimer);
+                    mercyOverrideActive = false;
+                }
+                updateDashboard();
+            });
+
+            mercyOverrideBtn.addEventListener('click', () => {
+                // Only activate if bus is at capacity and override is not already active
+                if (passengerCount >= maxCapacity && !mercyOverrideActive) {
+                    mercyOverrideActive = true;
+                    updateDashboard();
+                    // Set a timer to automatically deactivate mercy override
+                    mercyTimer = setTimeout(() => {
+                        mercyOverrideActive = false;
+                        updateDashboard();
+                    }, 5000); // 5-second override for demo
+                } else if (mercyOverrideActive) {
+                    alertMessageEl.textContent = 'Mercy override already active or not needed.';
+                    alertMessageEl.classList.add('alert-fade-in');
+                    setTimeout(() => alertMessageEl.classList.remove('alert-fade-in'), 1500); // Quick fade out for feedback
+                } else {
+                    alertMessageEl.textContent = 'Bus not at capacity to need override.';
+                    alertMessageEl.classList.add('alert-fade-in');
+                    setTimeout(() => alertMessageEl.classList.remove('alert-fade-in'), 1500); // Quick fade out for feedback
+                }
+            });
+            
+            // Component Data for System Architecture
+            const componentData = {
+                arduino: {
+                    title: '🧠 Arduino Microcontroller',
+                    description: 'The "brain" of the system. This microcontroller reads all sensor data, processes the counting logic, and sends commands to the display, alert system, and gate. It ensures real-time operational control.'
+                },
+                ir: {
+                    title: '👀 Infrared (IR) Sensors',
+                    description: 'Two pairs of IR sensors are precisely positioned at the bus entrance. By detecting the sequence in which the light beams are interrupted, the system accurately determines whether a passenger is entering or exiting, preventing miscounts.'
+                },
+                lcd: {
+                    title: '🖥️ LCD Display',
+                    description: 'A clear LCD screen mounted inside the bus provides real-time passenger count, helping drivers and passengers monitor the current occupancy. It also displays critical status messages like "OVERLOAD" or "MERCY OVERRIDE".'
+                },
+                gate: {
+                    title: '🚧 Solenoid Gate',
+                    description: 'A robust physical barrier that is automatically controlled by the Arduino. When the bus reaches its maximum allowed capacity, the gate closes and locks, preventing further boarding and ensuring safety compliance.'
+                },
+                alerts: {
+                    title: '🔔 Alert System',
+                    description: 'Comprising a loud buzzer and visual indicators, this system provides immediate alerts. It sounds an alarm when the bus capacity is reached, prompting the driver to halt boarding, and can also provide proximity warnings.'
+                }
+            };
+
+            // Event Listeners for System Architecture Nodes
+            componentNodes.forEach(node => {
+                node.addEventListener('click', () => showComponentDetails(node.dataset.component));
+                node.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault(); // Prevent default scroll for space key
+                        showComponentDetails(node.dataset.component);
+                    }
+                });
+            });
+
+            /**
+             * Displays details for the selected component in the architecture section.
+             * @param {string} componentKey - The key corresponding to the component data.
+             */
+            function showComponentDetails(componentKey) {
+                const data = componentData[componentKey];
+                componentDetailsEl.innerHTML = `
+                    <div class="text-left animate-fade-in">
+                        <h4 class="font-bold text-lg text-slate-800 mb-1">${data.title}</h4>
+                        <p class="text-slate-600">${data.description}</p>
+                    </div>
+                `;
+
+                // Update aria-expanded for accessibility
+                componentNodes.forEach(node => {
+                    node.setAttribute('aria-expanded', node.dataset.component === componentKey);
+                });
+            }
+
+            // Initial state setup
+            updateDashboard();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Tiru krishna E – Workshops attended in Cloud Computing, AI/ML, Web Development, Cybersecurity and Python." />
+    <title>Workshops | Tiru krishna E Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div id="loader" class="loader-overlay">
+        <div class="loader-content">
+            <div class="loader-logo">TK</div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring loader-ring--2"></div>
+            <div class="loader-ring loader-ring--3"></div>
+            <p class="loader-text">Loading Workshops...</p>
+            <div class="loader-bar">
+                <div class="loader-bar-fill" id="loaderBar"></div>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="particleCanvas"></canvas>
+
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><span class="logo-bracket">&lt;</span><span
+                    class="logo-name">TK</span><span class="logo-bracket">/&gt;</span></a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="certifications.html" class="nav-link">Certifications</a>
+                <a href="workshops.html" class="nav-link active">Workshops</a>
+                <a href="events.html" class="nav-link">Events</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+                <span class="ham-line"></span><span class="ham-line"></span><span class="ham-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <nav class="mobile-nav-links">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="about.html" class="mobile-link">About</a>
+            <a href="certifications.html" class="mobile-link">Certifications</a>
+            <a href="workshops.html" class="mobile-link">Workshops</a>
+            <a href="events.html" class="mobile-link">Events</a>
+            <a href="projects.html" class="mobile-link">Projects</a>
+            <a href="contact.html" class="mobile-link">Contact</a>
+        </nav>
+    </div>
+
+    <!-- WORKSHOPS SECTION -->
+    <section class="section workshops-section" style="padding-top:130px;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Learning Journey</span>
+                <h2 class="section-title">Workshops &amp; <span class="glow-text">Training</span></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="timeline">
+
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025</div>
+                        <div class="timeline-badge"><i class="fa-solid fa-cloud"></i> Cloud</div>
+                        <h4>Cloud Computing Essentials Workshop</h4>
+                        <p>Hands-on workshop covering AWS, Azure basics, cloud deployment, serverless computing, and
+                            DevOps pipelines. Learned to deploy web applications to cloud platforms.</p>
+                        <div class="timeline-tags">
+                            <span>AWS</span><span>Azure</span><span>DevOps</span><span>Serverless</span></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-right">
+                    <div class="timeline-dot timeline-dot--purple"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025</div>
+                        <div class="timeline-badge timeline-badge--purple"><i class="fa-solid fa-robot"></i> AI/ML</div>
+                        <h4>AI &amp; Machine Learning Bootcamp</h4>
+                        <p>Intensive AI/ML workshop covering supervised learning, neural networks, NLP basics, and
+                            building AI-powered web applications using Python and TensorFlow.</p>
+                        <div class="timeline-tags">
+                            <span>Python</span><span>TensorFlow</span><span>NLP</span><span>Neural Networks</span></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-dot timeline-dot--cyan"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-badge timeline-badge--cyan"><i class="fa-solid fa-globe"></i> Web Dev</div>
+                        <h4>Full-Stack Web Development Workshop</h4>
+                        <p>Comprehensive web development training covering React.js, Node.js, REST APIs, MongoDB and
+                            complete MERN stack development. Built 3 full-stack projects during the program.</p>
+                        <div class="timeline-tags">
+                            <span>React.js</span><span>Node.js</span><span>MongoDB</span><span>REST API</span></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-badge"><i class="fa-solid fa-shield-halved"></i> Security</div>
+                        <h4>Cybersecurity &amp; Ethical Hacking Workshop</h4>
+                        <p>Introduction to cybersecurity concepts, ethical hacking methodologies, penetration testing
+                            tools like Kali Linux, and security best practices for web applications.</p>
+                        <div class="timeline-tags"><span>Kali Linux</span><span>Pen
+                                Testing</span><span>OWASP</span><span>Security</span></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-dot timeline-dot--purple"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-badge timeline-badge--purple"><i class="fa-brands fa-python"></i> Python
+                        </div>
+                        <h4>Python for Data Science Workshop</h4>
+                        <p>Data science fundamentals using Python, Pandas, NumPy, Matplotlib and Seaborn for data
+                            analysis, visualization, and building effective data pipelines.</p>
+                        <div class="timeline-tags">
+                            <span>Python</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><span class="logo-bracket">&lt;</span><span class="logo-name">TK</span><span
+                        class="logo-bracket">/&gt;</span></div>
+                <p class="footer-tagline">Crafting Digital Experiences with Anti-Gravity Innovation</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a><a href="certifications.html">Certifications</a>
+                    <a href="projects.html">Projects</a><a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/tiru-krishna08" target="_blank" rel="noopener"
+                        aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="mailto:Tirukrishna.it27@gmail.com" aria-label="Email"><i
+                            class="fa-solid fa-envelope"></i></a>
+                </div>
+                <p class="footer-copy">&copy; 2026 <span class="glow-text">Tiru krishna E</span>. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+        <i class="fa-solid fa-chevron-up"></i>
+        <div class="scroll-top-ring"></div>
+    </button>
+    <script src="main.js"></script>
+</body>
+
+</html>

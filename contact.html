@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Contact Tiru krishna E – Get in touch via email, phone, LinkedIn or send a message directly." />
+    <title>Contact | Tiru krishna E Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div id="loader" class="loader-overlay">
+        <div class="loader-content">
+            <div class="loader-logo">TK</div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring loader-ring--2"></div>
+            <div class="loader-ring loader-ring--3"></div>
+            <p class="loader-text">Loading Contact...</p>
+            <div class="loader-bar">
+                <div class="loader-bar-fill" id="loaderBar"></div>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="particleCanvas"></canvas>
+
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><span class="logo-bracket">&lt;</span><span
+                    class="logo-name">TK</span><span class="logo-bracket">/&gt;</span></a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="certifications.html" class="nav-link">Certifications</a>
+                <a href="workshops.html" class="nav-link">Workshops</a>
+                <a href="events.html" class="nav-link">Events</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+                <span class="ham-line"></span><span class="ham-line"></span><span class="ham-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <nav class="mobile-nav-links">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="about.html" class="mobile-link">About</a>
+            <a href="certifications.html" class="mobile-link">Certifications</a>
+            <a href="workshops.html" class="mobile-link">Workshops</a>
+            <a href="events.html" class="mobile-link">Events</a>
+            <a href="projects.html" class="mobile-link">Projects</a>
+            <a href="contact.html" class="mobile-link">Contact</a>
+        </nav>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" style="padding-top:130px;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Get In Touch</span>
+                <h2 class="section-title">Contact <span class="glow-text">Me</span></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="contact-grid">
+
+                <!-- Info Side -->
+                <div class="contact-info reveal-left">
+                    <h3>Let's <span class="glow-text">Connect</span></h3>
+                    <p>Have a project idea, job opportunity, or just want to say hello? My inbox is always open. Let's
+                        build something amazing together!</p>
+
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <h5>Email</h5>
+                                <a href="mailto:Tirukrishna.it27@gmail.com">Tirukrishna.it27@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <h5>Phone</h5>
+                                <a href="tel:+919445736018">+91 9445736018</a>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h5>Location</h5>
+                                <span>Chennai-107, Tamil Nadu, India</span>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div>
+                                <h5>College</h5>
+                                <span>Panimalar Engineering College</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-socials">
+                        <a href="https://www.linkedin.com/in/tiru-krishna08" target="_blank" rel="noopener"
+                            class="social-btn linkedin">
+                            <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/" target="_blank" rel="noopener" class="social-btn github">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Form Side -->
+                <div class="contact-form-wrapper reveal-right">
+                    <div id="formStatus" class="form-status" style="display:none;"></div>
+                    <form id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="contactName">Your Name *</label>
+                            <input type="text" id="contactName" name="name" class="form-input"
+                                placeholder="Tiru Krishna" required />
+                            <span class="form-error" id="nameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address *</label>
+                            <input type="email" id="contactEmail" name="email" class="form-input"
+                                placeholder="hello@example.com" required />
+                            <span class="form-error" id="emailError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" id="contactSubject" name="subject" class="form-input"
+                                placeholder="Project Collaboration / Job Offer..." />
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message *</label>
+                            <textarea id="contactMessage" name="message" class="form-input form-textarea" rows="5"
+                                placeholder="Tell me about your project or opportunity..." required></textarea>
+                            <span class="form-error" id="messageError"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="submitBtn"
+                            style="width:100%; justify-content:center;">
+                            <span id="submitText"><i class="fa-solid fa-paper-plane"></i> Send Message</span>
+                            <span id="submitLoader" style="display:none;"><i class="fa-solid fa-spinner fa-spin"></i>
+                                Sending...</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><span class="logo-bracket">&lt;</span><span class="logo-name">TK</span><span
+                        class="logo-bracket">/&gt;</span></div>
+                <p class="footer-tagline">Crafting Digital Experiences with Anti-Gravity Innovation</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a><a href="certifications.html">Certifications</a>
+                    <a href="projects.html">Projects</a><a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/tiru-krishna08" target="_blank" rel="noopener"
+                        aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="mailto:Tirukrishna.it27@gmail.com" aria-label="Email"><i
+                            class="fa-solid fa-envelope"></i></a>
+                </div>
+                <p class="footer-copy">&copy; 2026 <span class="glow-text">Tiru krishna E</span>. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+        <i class="fa-solid fa-chevron-up"></i>
+        <div class="scroll-top-ring"></div>
+    </button>
+    <script src="main.js"></script>
+</body>
+
+</html>

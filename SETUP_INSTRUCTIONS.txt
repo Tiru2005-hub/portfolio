@@ -1,0 +1,63 @@
+PORTFOLIO WEBSITE SETUP INSTRUCTIONS
+====================================
+
+1. CREATE CERTIFICATES FOLDER:
+   - Create a folder named "certificates" in the portfolio directory
+   - Path: c:\Users\Elanchezhian.V\OneDrive\Desktop\portfolio\certificates
+
+2. COPY CERTIFICATE PDFs:
+   Copy the following PDF files to the certificates folder with these exact names:
+
+   Source: C:\Users\Elanchezhian.V\AppData\Roaming\Cursor\User\workspaceStorage\3721de26035da85a6eca0db3abc04849\pdfs\726d69bf-7809-47e8-90bd-71cd31974f0e\Tiru infosys Ethical Hacking 101 certificate.pdf
+   → Destination: certificates\Ethical_Hacking_101.pdf
+
+   Source: C:\Users\Elanchezhian.V\AppData\Roaming\Cursor\User\workspaceStorage\3721de26035da85a6eca0db3abc04849\pdfs\9b100cef-992d-4181-a3a4-77329f01df27\Fullstack Besant Technology Certificate.pdf
+   → Destination: certificates\Fullstack_Besant_Technology.pdf
+
+   Source: C:\Users\Elanchezhian.V\AppData\Roaming\Cursor\User\workspaceStorage\3721de26035da85a6eca0db3abc04849\pdfs\1289943c-5b79-4133-b4ce-9fd6e621c6c8\Tiru infosys Cloud computingcertificate.pdf
+   → Destination: certificates\Cloud_Computing.pdf
+
+   Source: C:\Users\Elanchezhian.V\AppData\Roaming\Cursor\User\workspaceStorage\3721de26035da85a6eca0db3abc04849\pdfs\c32cc4a0-5ee2-4da9-ad1d-98f5beb05c32\Tiru Wadhwani Foundation Certificate.pdf
+   → Destination: certificates\Wadhwani_Foundation.pdf
+
+   Source: C:\Users\Elanchezhian.V\AppData\Roaming\Cursor\User\workspaceStorage\3721de26035da85a6eca0db3abc04849\pdfs\6814498d-e182-41f0-b50e-41a12e60adc3\Tiru Python Certificate.pdf
+   → Destination: certificates\Python.pdf
+
+   Source: C:\Users\Elanchezhian.V\AppData\Roaming\Cursor\User\workspaceStorage\3721de26035da85a6eca0db3abc04849\pdfs\973ca52d-1ffe-4721-a486-5aac2f0ab7f1\Tiru C&C++ Certificate.pdf
+   → Destination: certificates\C_Cpp.pdf
+
+   Source: C:\Users\Elanchezhian.V\AppData\Roaming\Cursor\User\workspaceStorage\3721de26035da85a6eca0db3abc04849\pdfs\e69e0ea3-5dd0-4c6c-bcc6-9882e81fd557\Tiru Java Certificate.pdf
+   → Destination: certificates\Java.pdf
+
+   Source: C:\Users\Elanchezhian.V\AppData\Roaming\Cursor\User\workspaceStorage\3721de26035da85a6eca0db3abc04849\pdfs\b4605cae-a4fd-4163-b6e6-545f08e72016\Tiru oracal certificate.pdf
+   → Destination: certificates\Oracle.pdf
+
+   Source: C:\Users\Elanchezhian.V\AppData\Roaming\Cursor\User\workspaceStorage\3721de26035da85a6eca0db3abc04849\pdfs\6dd591fc-e143-4f8b-bd48-01d679462f48\Tiru Bss C&C++ certificate.pdf
+   → Destination: certificates\BSS_C_Cpp.pdf
+
+   Source: C:\Users\Elanchezhian.V\AppData\Roaming\Cursor\User\workspaceStorage\3721de26035da85a6eca0db3abc04849\pdfs\1631dc29-4185-4bdf-ad21-459c132dd072\Resume_org.pdf
+   → Destination: certificates\Resume.pdf
+
+3. UPDATE CONTACT INFORMATION:
+   - Open index.html
+   - Update email, phone, and location in the Contact section
+   - Update social media links with your actual profiles
+
+4. UPDATE ABOUT SECTION:
+   - Customize the About Me section with your personal information
+   - Update the info-grid with your actual details
+
+5. OPEN THE WEBSITE:
+   - Simply open index.html in your web browser
+   - Or use a local server for better performance
+
+FEATURES:
+- Responsive design (works on mobile, tablet, desktop)
+- Smooth scrolling navigation
+- Animated skill bars
+- Certificate modal viewer (click any certificate to view PDF)
+- Contact form
+- Scroll to top button
+- Modern, professional design
+
+Enjoy your new portfolio website!

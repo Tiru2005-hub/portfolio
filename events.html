@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Tiru krishna E – Events participated including hackathons, technical symposiums, coding contests and project expos." />
+    <title>Events | Tiru krishna E Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div id="loader" class="loader-overlay">
+        <div class="loader-content">
+            <div class="loader-logo">TK</div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring loader-ring--2"></div>
+            <div class="loader-ring loader-ring--3"></div>
+            <p class="loader-text">Loading Events...</p>
+            <div class="loader-bar">
+                <div class="loader-bar-fill" id="loaderBar"></div>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="particleCanvas"></canvas>
+
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><span class="logo-bracket">&lt;</span><span
+                    class="logo-name">TK</span><span class="logo-bracket">/&gt;</span></a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="certifications.html" class="nav-link">Certifications</a>
+                <a href="workshops.html" class="nav-link">Workshops</a>
+                <a href="events.html" class="nav-link active">Events</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+                <span class="ham-line"></span><span class="ham-line"></span><span class="ham-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <nav class="mobile-nav-links">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="about.html" class="mobile-link">About</a>
+            <a href="certifications.html" class="mobile-link">Certifications</a>
+            <a href="workshops.html" class="mobile-link">Workshops</a>
+            <a href="events.html" class="mobile-link">Events</a>
+            <a href="projects.html" class="mobile-link">Projects</a>
+            <a href="contact.html" class="mobile-link">Contact</a>
+        </nav>
+    </div>
+
+    <!-- EVENTS SECTION -->
+    <section class="section events-section" style="padding-top:130px;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Competitions &amp; Events</span>
+                <h2 class="section-title">Events <span class="glow-text">Participated</span></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="events-grid">
+
+                <div class="event-card event-hackathon float-card reveal-up">
+                    <div class="event-glow"></div>
+                    <div class="event-category"><i class="fa-solid fa-code-branch"></i> Hackathon</div>
+                    <h4>Smart India Hackathon</h4>
+                    <p class="event-org">Ministry of Education, India</p>
+                    <p class="event-desc">Participated in India's largest hackathon, building an AI-powered government
+                        scheme finder for rural citizens in a team of 6.</p>
+                    <div class="event-meta">
+                        <span><i class="fa-solid fa-calendar"></i> 2024</span>
+                        <span><i class="fa-solid fa-users"></i> Team of 6</span>
+                    </div>
+                    <div class="event-result result-participant">Participant</div>
+                </div>
+
+                <div class="event-card event-symposium float-card reveal-up" style="animation-delay:.15s">
+                    <div class="event-glow"></div>
+                    <div class="event-category"><i class="fa-solid fa-trophy"></i> Technical Symposium</div>
+                    <h4>TechFest – National Tech Symposium</h4>
+                    <p class="event-org">Panimalar Engineering College</p>
+                    <p class="event-desc">Competed in paper presentation and technical quiz rounds, showcasing knowledge
+                        in cloud computing and web technologies.</p>
+                    <div class="event-meta">
+                        <span><i class="fa-solid fa-calendar"></i> 2024</span>
+                        <span><i class="fa-solid fa-star"></i> 2nd Place</span>
+                    </div>
+                    <div class="event-result result-winner">2nd Place 🥈</div>
+                </div>
+
+                <div class="event-card event-coding float-card reveal-up" style="animation-delay:.3s">
+                    <div class="event-glow"></div>
+                    <div class="event-category"><i class="fa-solid fa-laptop-code"></i> Coding Contest</div>
+                    <h4>Coding Blitz – Competitive Programming</h4>
+                    <p class="event-org">Anna University Zonal Event</p>
+                    <p class="event-desc">Competitive programming contest solving algorithmic challenges in Python and
+                        Java, focusing on time complexity optimization.</p>
+                    <div class="event-meta">
+                        <span><i class="fa-solid fa-calendar"></i> 2024</span>
+                        <span><i class="fa-solid fa-clock"></i> 3 Hours</span>
+                    </div>
+                    <div class="event-result result-participant">Participant</div>
+                </div>
+
+                <div class="event-card event-hackathon float-card reveal-up" style="animation-delay:.1s">
+                    <div class="event-glow"></div>
+                    <div class="event-category"><i class="fa-solid fa-paint-brush"></i> Web Design</div>
+                    <h4>Web Wizards – Design Challenge</h4>
+                    <p class="event-org">College Annual Techno-Fest</p>
+                    <p class="event-desc">Designed and built a complete responsive web application within 4 hours,
+                        winning the college-level web design competition.</p>
+                    <div class="event-meta">
+                        <span><i class="fa-solid fa-calendar"></i> 2025</span>
+                        <span><i class="fa-solid fa-medal"></i> Winner</span>
+                    </div>
+                    <div class="event-result result-winner">1st Place 🥇</div>
+                </div>
+
+                <div class="event-card event-symposium float-card reveal-up" style="animation-delay:.25s">
+                    <div class="event-glow"></div>
+                    <div class="event-category"><i class="fa-solid fa-microchip"></i> Project Expo</div>
+                    <h4>Innovation Expo – Project Showcase</h4>
+                    <p class="event-org">Technical Symposium 2025</p>
+                    <p class="event-desc">Showcased the AI Government Scheme Finder project, receiving appreciation from
+                        industry experts and academic panelists.</p>
+                    <div class="event-meta">
+                        <span><i class="fa-solid fa-calendar"></i> 2025</span>
+                        <span><i class="fa-solid fa-thumbs-up"></i> Appreciated</span>
+                    </div>
+                    <div class="event-result result-participant">Best Project Nominee</div>
+                </div>
+
+                <div class="event-card event-coding float-card reveal-up" style="animation-delay:.4s">
+                    <div class="event-glow"></div>
+                    <div class="event-category"><i class="fa-solid fa-brain"></i> Technical Quiz</div>
+                    <h4>TechQuiz – IT Knowledge Battle</h4>
+                    <p class="event-org">Intra-College Tech Event</p>
+                    <p class="event-desc">Participated in a multi-round technical quiz covering networking, DBMS, cloud
+                        computing, and programming concepts.</p>
+                    <div class="event-meta">
+                        <span><i class="fa-solid fa-calendar"></i> 2024</span>
+                        <span><i class="fa-solid fa-users"></i> Individual</span>
+                    </div>
+                    <div class="event-result result-winner">3rd Place 🥉</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><span class="logo-bracket">&lt;</span><span class="logo-name">TK</span><span
+                        class="logo-bracket">/&gt;</span></div>
+                <p class="footer-tagline">Crafting Digital Experiences with Anti-Gravity Innovation</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a><a href="certifications.html">Certifications</a>
+                    <a href="projects.html">Projects</a><a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/tiru-krishna08" target="_blank" rel="noopener"
+                        aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="mailto:Tirukrishna.it27@gmail.com" aria-label="Email"><i
+                            class="fa-solid fa-envelope"></i></a>
+                </div>
+                <p class="footer-copy">&copy; 2026 <span class="glow-text">Tiru krishna E</span>. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+        <i class="fa-solid fa-chevron-up"></i>
+        <div class="scroll-top-ring"></div>
+    </button>
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="About Tiru krishna E – B.Tech IT Student at Panimalar Engineering College. Skills, education, and professional background." />
+    <title>About | Tiru krishna E Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- LOADER -->
+    <div id="loader" class="loader-overlay">
+        <div class="loader-content">
+            <div class="loader-logo">TK</div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring loader-ring--2"></div>
+            <div class="loader-ring loader-ring--3"></div>
+            <p class="loader-text">Loading About...</p>
+            <div class="loader-bar">
+                <div class="loader-bar-fill" id="loaderBar"></div>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- NAVBAR -->
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><span class="logo-bracket">&lt;</span><span
+                    class="logo-name">TK</span><span class="logo-bracket">/&gt;</span></a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="certifications.html" class="nav-link">Certifications</a>
+                <a href="workshops.html" class="nav-link">Workshops</a>
+                <a href="events.html" class="nav-link">Events</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+                <span class="ham-line"></span><span class="ham-line"></span><span class="ham-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <nav class="mobile-nav-links">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="about.html" class="mobile-link">About</a>
+            <a href="certifications.html" class="mobile-link">Certifications</a>
+            <a href="workshops.html" class="mobile-link">Workshops</a>
+            <a href="events.html" class="mobile-link">Events</a>
+            <a href="projects.html" class="mobile-link">Projects</a>
+            <a href="contact.html" class="mobile-link">Contact</a>
+        </nav>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" style="padding-top:130px;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Who Am I?</span>
+                <h2 class="section-title">About <span class="glow-text">Me</span></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="about-grid">
+                <!-- Photo Column -->
+                <div class="about-photo-wrapper reveal-left">
+                    <div class="photo-frame">
+                        <img src="./Tiru.jpg" alt="Tiru krishna E" class="profile-photo" />
+                        <div class="photo-overlay"></div>
+                    </div>
+                    <div class="photo-badge">
+                        <i class="fa-solid fa-graduation-cap"></i><span>B.Tech IT</span>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="4">0</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="9">0</span>
+                            <span class="stat-label">Certificates</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="7">0</span>
+                            <span class="stat-label">Technologies</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Column -->
+                <div class="about-content reveal-right">
+                    <h3 class="about-subtitle">Passionate IT Student &amp; Developer</h3>
+                    <p class="about-desc">
+                        Passionate IT student with knowledge in Python, Java, C, SQL, JavaScript, HTML, CSS and Cloud
+                        Computing.
+                        Currently pursuing B.Tech in Information Technology at Panimalar Engineering College, Chennai
+                        (CGPA: 7.62).
+                    </p>
+                    <p class="about-desc">
+                        With hands-on experience as a Web Development Intern at MedSocio HealthTech (Jun–Jul 2024) and a
+                        Web
+                        Application Development Intern at Robowaves / Test Yantra Software Solutions (Feb–Apr 2025), I
+                        bring
+                        real-world expertise to every project I build.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail-item"><i class="fa-solid fa-location-dot"></i><span>Chennai-107, Tamil
+                                Nadu</span></div>
+                        <div class="detail-item"><i class="fa-solid fa-envelope"></i><a
+                                href="mailto:Tirukrishna.it27@gmail.com">Tirukrishna.it27@gmail.com</a></div>
+                        <div class="detail-item"><i class="fa-solid fa-phone"></i><span>+91 9445736018</span></div>
+                        <div class="detail-item"><i class="fa-solid fa-link"></i><a
+                                href="https://www.linkedin.com/in/tiru-krishna08" target="_blank"
+                                rel="noopener">linkedin.com/in/tiru-krishna08</a></div>
+                        <div class="detail-item"><i class="fa-solid fa-university"></i><span>Panimalar Engineering
+                                College</span></div>
+                    </div>
+                    <a href="certificates/Resume.pdf" download class="btn btn-primary mt-2">
+                        <i class="fa-solid fa-download"></i> Download Resume
+                    </a>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="skills-title reveal-up">
+                <h3>Technical <span class="glow-text">Arsenal</span></h3>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card reveal-up">
+                    <div class="skill-card-icon"><i class="fa-solid fa-code"></i></div>
+                    <h4>Programming</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span><span class="skill-tag">Java</span>
+                        <span class="skill-tag">C</span><span class="skill-tag">C++</span><span
+                            class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal-up" style="animation-delay:.1s">
+                    <div class="skill-card-icon"><i class="fa-brands fa-html5"></i></div>
+                    <h4>Web Development</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5</span><span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span><span class="skill-tag">React.js</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal-up" style="animation-delay:.2s">
+                    <div class="skill-card-icon"><i class="fa-solid fa-database"></i></div>
+                    <h4>Database</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span><span class="skill-tag">MongoDB</span><span
+                            class="skill-tag">Firebase</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal-up" style="animation-delay:.3s">
+                    <div class="skill-card-icon"><i class="fa-solid fa-cloud"></i></div>
+                    <h4>Cloud Computing</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS Basics</span><span class="skill-tag">Cloud Essentials</span><span
+                            class="skill-tag">Deployment</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work Experience -->
+            <div class="skills-title reveal-up" style="margin-top:4rem">
+                <h3>Work <span class="glow-text">Experience</span></h3>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Feb 2025 – Apr 2025</div>
+                        <div class="timeline-badge"><i class="fa-solid fa-briefcase"></i> Internship</div>
+                        <h4>Web Application Development Intern</h4>
+                        <p>Robowaves (Test Yantra Software Solutions) · Chennai, India<br />
+                            Developed and deployed dynamic, responsive web applications using React.js and Firebase,
+                            gaining hands-on experience in full-stack development.</p>
+                        <div class="timeline-tags"><span>React.js</span><span>Firebase</span><span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-right">
+                    <div class="timeline-dot timeline-dot--purple"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jun 2024 – Jul 2024</div>
+                        <div class="timeline-badge timeline-badge--purple"><i class="fa-solid fa-briefcase"></i>
+                            Internship</div>
+                        <h4>Web Development Intern</h4>
+                        <p>MedSocio HealthTech Private Limited · Chennai, India<br />
+                            Developed and maintained responsive web interfaces using HTML, CSS, and JavaScript while
+                            collaborating with the development team.</p>
+                        <div class="timeline-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><span class="logo-bracket">&lt;</span><span class="logo-name">TK</span><span
+                        class="logo-bracket">/&gt;</span></div>
+                <p class="footer-tagline">Crafting Digital Experiences with Anti-Gravity Innovation</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a><a href="certifications.html">Certifications</a>
+                    <a href="projects.html">Projects</a><a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/tiru-krishna08" target="_blank" rel="noopener"
+                        aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="mailto:Tirukrishna.it27@gmail.com" aria-label="Email"><i
+                            class="fa-solid fa-envelope"></i></a>
+                </div>
+                <p class="footer-copy">&copy; 2026 <span class="glow-text">Tiru krishna E</span>. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+        <i class="fa-solid fa-chevron-up"></i>
+        <div class="scroll-top-ring"></div>
+    </button>
+    <script src="main.js"></script>
+</body>
+
+</html>

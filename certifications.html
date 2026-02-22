@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Tiru krishna E – Certifications in Full-Stack Java, Python, Cloud Computing, Ethical Hacking and more." />
+    <title>Certifications | Tiru krishna E Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div id="loader" class="loader-overlay">
+        <div class="loader-content">
+            <div class="loader-logo">TK</div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring loader-ring--2"></div>
+            <div class="loader-ring loader-ring--3"></div>
+            <p class="loader-text">Loading Certifications...</p>
+            <div class="loader-bar">
+                <div class="loader-bar-fill" id="loaderBar"></div>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="particleCanvas"></canvas>
+
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><span class="logo-bracket">&lt;</span><span
+                    class="logo-name">TK</span><span class="logo-bracket">/&gt;</span></a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="certifications.html" class="nav-link active">Certifications</a>
+                <a href="workshops.html" class="nav-link">Workshops</a>
+                <a href="events.html" class="nav-link">Events</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+                <span class="ham-line"></span><span class="ham-line"></span><span class="ham-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <nav class="mobile-nav-links">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="about.html" class="mobile-link">About</a>
+            <a href="certifications.html" class="mobile-link">Certifications</a>
+            <a href="workshops.html" class="mobile-link">Workshops</a>
+            <a href="events.html" class="mobile-link">Events</a>
+            <a href="projects.html" class="mobile-link">Projects</a>
+            <a href="contact.html" class="mobile-link">Contact</a>
+        </nav>
+    </div>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section class="section certifications-section" style="padding-top:130px;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Achievements</span>
+                <h2 class="section-title">My <span class="glow-text">Certifications</span></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="cert-grid">
+
+                <div class="cert-card reveal-up">
+                    <div class="cert-ribbon"><span>2025</span></div>
+                    <div class="cert-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <div class="cert-body">
+                        <h4 class="cert-title">Full-Stack Java Development</h4>
+                        <p class="cert-org"><i class="fa-solid fa-building"></i> Besant Technologies</p>
+                        <p class="cert-date"><i class="fa-solid fa-calendar"></i> Nov 2025</p>
+                        <p class="cert-desc">Comprehensive full-stack development training covering Java, Spring Boot,
+                            React.js and MySQL.</p>
+                    </div>
+                    <button class="cert-btn" data-cert-img="certificates/fullstack_java.jpg"
+                        data-cert-title="Full-Stack Java Development">
+                        <i class="fa-solid fa-eye"></i> View Certificate
+                    </button>
+                </div>
+
+                <div class="cert-card reveal-up" style="animation-delay:.1s">
+                    <div class="cert-ribbon cert-ribbon--purple"><span>2025</span></div>
+                    <div class="cert-icon"><i class="fa-brands fa-python"></i></div>
+                    <div class="cert-body">
+                        <h4 class="cert-title">Python Programming (Distinction)</h4>
+                        <p class="cert-org"><i class="fa-solid fa-building"></i> Bharat Sevak Samaj</p>
+                        <p class="cert-date"><i class="fa-solid fa-calendar"></i> May – Aug 2023</p>
+                        <p class="cert-desc">Earned Distinction in Python programming covering OOP, data structures, and
+                            application development.</p>
+                    </div>
+                    <button class="cert-btn" data-cert-img="certificates/python_cert.jpg"
+                        data-cert-title="Python Programming (Distinction)">
+                        <i class="fa-solid fa-eye"></i> View Certificate
+                    </button>
+                </div>
+
+                <div class="cert-card reveal-up" style="animation-delay:.2s">
+                    <div class="cert-ribbon cert-ribbon--cyan"><span>2025</span></div>
+                    <div class="cert-icon"><i class="fa-brands fa-java"></i></div>
+                    <div class="cert-body">
+                        <h4 class="cert-title">Java Programming (Distinction)</h4>
+                        <p class="cert-org"><i class="fa-solid fa-building"></i> Bharat Sevak Samaj</p>
+                        <p class="cert-date"><i class="fa-solid fa-calendar"></i> Feb – May 2025</p>
+                        <p class="cert-desc">Advanced Java programming with OOP principles, collections framework and
+                            enterprise applications.</p>
+                    </div>
+                    <button class="cert-btn" data-cert-img="certificates/java.jpg"
+                        data-cert-title="Java Programming (Distinction)">
+                        <i class="fa-solid fa-eye"></i> View Certificate
+                    </button>
+                </div>
+
+                <div class="cert-card reveal-up" style="animation-delay:.3s">
+                    <div class="cert-ribbon"><span>2025</span></div>
+                    <div class="cert-icon"><i class="fa-solid fa-c"></i></div>
+                    <div class="cert-body">
+                        <h4 class="cert-title">C &amp; C++ Programming</h4>
+                        <p class="cert-org"><i class="fa-solid fa-building"></i> Vaagai Academy</p>
+                        <p class="cert-date"><i class="fa-solid fa-calendar"></i> Jan – Mar 2025</p>
+                        <p class="cert-desc">System programming fundamentals with C and C++, covering memory management
+                            and data structures.</p>
+                    </div>
+                    <button class="cert-btn" data-cert-img="certificates/c_cpp.jpg"
+                        data-cert-title="C & C++ Programming">
+                        <i class="fa-solid fa-eye"></i> View Certificate
+                    </button>
+                </div>
+
+                <div class="cert-card reveal-up" style="animation-delay:.1s">
+                    <div class="cert-ribbon cert-ribbon--purple"><span>2024</span></div>
+                    <div class="cert-icon"><i class="fa-solid fa-cloud"></i></div>
+                    <div class="cert-body">
+                        <h4 class="cert-title">Cloud Computing</h4>
+                        <p class="cert-org"><i class="fa-solid fa-building"></i> Infosys Springboard</p>
+                        <p class="cert-date"><i class="fa-solid fa-calendar"></i> 2024</p>
+                        <p class="cert-desc">Cloud computing fundamentals covering IaaS, PaaS, SaaS and cloud deployment
+                            strategies.</p>
+                    </div>
+                    <button class="cert-btn" data-cert-img="certificates/cloud_computing.jpg"
+                        data-cert-title="Cloud Computing">
+                        <i class="fa-solid fa-eye"></i> View Certificate
+                    </button>
+                </div>
+
+                <div class="cert-card reveal-up" style="animation-delay:.2s">
+                    <div class="cert-ribbon cert-ribbon--cyan"><span>2024</span></div>
+                    <div class="cert-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="cert-body">
+                        <h4 class="cert-title">Ethical Hacking 101</h4>
+                        <p class="cert-org"><i class="fa-solid fa-building"></i> Infosys Springboard</p>
+                        <p class="cert-date"><i class="fa-solid fa-calendar"></i> 2024</p>
+                        <p class="cert-desc">Introduction to ethical hacking, penetration testing, and cybersecurity
+                            fundamentals.</p>
+                    </div>
+                    <button class="cert-btn" data-cert-img="certificates/ethical_hacking.jpg"
+                        data-cert-title="Ethical Hacking 101">
+                        <i class="fa-solid fa-eye"></i> View Certificate
+                    </button>
+                </div>
+
+                <div class="cert-card reveal-up" style="animation-delay:.3s">
+                    <div class="cert-ribbon"><span>2024</span></div>
+                    <div class="cert-icon"><i class="fa-solid fa-database"></i></div>
+                    <div class="cert-body">
+                        <h4 class="cert-title">Oracle Certification</h4>
+                        <p class="cert-org"><i class="fa-solid fa-building"></i> Oracle Academy</p>
+                        <p class="cert-date"><i class="fa-solid fa-calendar"></i> 2024</p>
+                        <p class="cert-desc">Oracle database management, SQL querying, and application programming
+                            fundamentals.</p>
+                    </div>
+                    <button class="cert-btn" data-cert-img="certificates/oracle.jpg"
+                        data-cert-title="Oracle Certification">
+                        <i class="fa-solid fa-eye"></i> View Certificate
+                    </button>
+                </div>
+
+                <div class="cert-card reveal-up" style="animation-delay:.1s">
+                    <div class="cert-ribbon cert-ribbon--purple"><span>2024</span></div>
+                    <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="cert-body">
+                        <h4 class="cert-title">Wadhwani Foundation</h4>
+                        <p class="cert-org"><i class="fa-solid fa-building"></i> Wadhwani Foundation</p>
+                        <p class="cert-date"><i class="fa-solid fa-calendar"></i> 2024</p>
+                        <p class="cert-desc">Entrepreneurship and technology skills development program by Wadhwani
+                            Foundation.</p>
+                    </div>
+                    <button class="cert-btn" data-cert-img="certificates/wadhwani.jpg"
+                        data-cert-title="Wadhwani Foundation">
+                        <i class="fa-solid fa-eye"></i> View Certificate
+                    </button>
+                </div>
+
+                <div class="cert-card reveal-up" style="animation-delay:.2s">
+                    <div class="cert-ribbon cert-ribbon--cyan"><span>2024</span></div>
+                    <div class="cert-icon"><i class="fa-solid fa-terminal"></i></div>
+                    <div class="cert-body">
+                        <h4 class="cert-title">BSS C &amp; C++</h4>
+                        <p class="cert-org"><i class="fa-solid fa-building"></i> Bharat Sevak Samaj</p>
+                        <p class="cert-date"><i class="fa-solid fa-calendar"></i> 2024</p>
+                        <p class="cert-desc">Advanced systems programming with BSS certification in C and C++
+                            programming languages.</p>
+                    </div>
+                    <button class="cert-btn" data-cert-img="certificates/bss_c_cpp.jpg" data-cert-title="BSS C & C++">
+                        <i class="fa-solid fa-eye"></i> View Certificate
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATE LIGHTBOX MODAL -->
+    <div class="cert-modal-overlay" id="certModal">
+        <div class="cert-modal">
+            <div class="cert-modal-header">
+                <h3 class="cert-modal-title" id="certModalTitle">Certificate</h3>
+                <div class="cert-modal-controls">
+                    <span class="cert-page-indicator" id="certPageIndicator" style="display:none;">
+                        <i class="fa-solid fa-file"></i> <span id="certPageCurrent">1</span> / <span
+                            id="certPageTotal">1</span>
+                    </span>
+                    <button class="cert-modal-control-btn" id="certZoomOut" aria-label="Zoom Out" title="Zoom Out">
+                        <i class="fa-solid fa-magnifying-glass-minus"></i>
+                    </button>
+                    <span class="cert-zoom-level" id="certZoomLevel">100%</span>
+                    <button class="cert-modal-control-btn" id="certZoomIn" aria-label="Zoom In" title="Zoom In">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </button>
+                    <button class="cert-modal-control-btn" id="certDownload" aria-label="Download" title="Download">
+                        <i class="fa-solid fa-download"></i>
+                    </button>
+                    <button class="cert-modal-close" id="certModalClose" aria-label="Close Modal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="cert-modal-body" id="certModalBody">
+                <!-- Prev/Next Navigation Arrows -->
+                <button class="cert-nav-btn cert-nav-prev" id="certNavPrev" aria-label="Previous Page"
+                    style="display:none;">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="cert-nav-btn cert-nav-next" id="certNavNext" aria-label="Next Page"
+                    style="display:none;">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                <div class="cert-modal-loader" id="certModalLoader">
+                    <div class="cert-modal-spinner"></div>
+                    <p>Loading Certificate...</p>
+                </div>
+                <img class="cert-modal-img" id="certModalImg" alt="Certificate" />
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><span class="logo-bracket">&lt;</span><span class="logo-name">TK</span><span
+                        class="logo-bracket">/&gt;</span></div>
+                <p class="footer-tagline">Crafting Digital Experiences with Anti-Gravity Innovation</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a><a href="certifications.html">Certifications</a>
+                    <a href="projects.html">Projects</a><a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/tiru-krishna08" target="_blank" rel="noopener"
+                        aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="mailto:Tirukrishna.it27@gmail.com" aria-label="Email"><i
+                            class="fa-solid fa-envelope"></i></a>
+                </div>
+                <p class="footer-copy">&copy; 2026 <span class="glow-text">Tiru krishna E</span>. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+        <i class="fa-solid fa-chevron-up"></i>
+        <div class="scroll-top-ring"></div>
+    </button>
+    <script src="main.js"></script>
+</body>
+
+</html>
