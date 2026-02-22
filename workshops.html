@@ -76,6 +76,45 @@
             <div class="timeline">
 
                 <div class="timeline-item reveal-left">
+                    <div class="timeline-dot timeline-dot--cyan"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2026</div>
+                        <div class="timeline-badge timeline-badge--cyan"><i class="fa-solid fa-robot"></i> AI Apps</div>
+                        <h4>Mastering MCP: Building Context-Aware AI Apps</h4>
+                        <p>Participated in the "Mastering MCP" workshop conducted as part of ABACUS'26. Focused on
+                            building context-aware AI applications using Model Context Protocol (MCP) and modern AI
+                            frameworks.</p>
+                        <div class="timeline-tags">
+                            <span>MCP</span><span>AI</span><span>Context-Aware</span><span>ABACUS'26</span>
+                        </div>
+                        <button class="cert-btn-small cert-btn" data-cert-img="certificates/mcp_workshop_2026.jpg"
+                            data-cert-title="Mastering MCP Workshop">
+                            <i class="fa-solid fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-right">
+                    <div class="timeline-dot timeline-dot--purple"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2026</div>
+                        <div class="timeline-badge timeline-badge--purple"><i class="fa-solid fa-cloud"></i> Cloud AI
+                        </div>
+                        <h4>Cloud Computing Essentials in the era of AI</h4>
+                        <p>A comprehensive workshop on Cloud Computing fundamentals integrated with AI capabilities.
+                            Explored how AI is transforming cloud architecture and deployment during ABACUS'26.</p>
+                        <div class="timeline-tags">
+                            <span>Cloud</span><span>AI</span><span>AWS</span><span>ABACUS'26</span>
+                        </div>
+                        <button class="cert-btn-small cert-btn" data-cert-img="certificates/cloud_essentials_2026.jpg"
+                            data-cert-title="Cloud & AI Workshop">
+                            <i class="fa-solid fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="timeline-item reveal-left">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-date">2025</div>
@@ -84,7 +123,8 @@
                         <p>Hands-on workshop covering AWS, Azure basics, cloud deployment, serverless computing, and
                             DevOps pipelines. Learned to deploy web applications to cloud platforms.</p>
                         <div class="timeline-tags">
-                            <span>AWS</span><span>Azure</span><span>DevOps</span><span>Serverless</span></div>
+                            <span>AWS</span><span>Azure</span><span>DevOps</span><span>Serverless</span>
+                        </div>
                     </div>
                 </div>
 
@@ -97,7 +137,8 @@
                         <p>Intensive AI/ML workshop covering supervised learning, neural networks, NLP basics, and
                             building AI-powered web applications using Python and TensorFlow.</p>
                         <div class="timeline-tags">
-                            <span>Python</span><span>TensorFlow</span><span>NLP</span><span>Neural Networks</span></div>
+                            <span>Python</span><span>TensorFlow</span><span>NLP</span><span>Neural Networks</span>
+                        </div>
                     </div>
                 </div>
 
@@ -110,7 +151,8 @@
                         <p>Comprehensive web development training covering React.js, Node.js, REST APIs, MongoDB and
                             complete MERN stack development. Built 3 full-stack projects during the program.</p>
                         <div class="timeline-tags">
-                            <span>React.js</span><span>Node.js</span><span>MongoDB</span><span>REST API</span></div>
+                            <span>React.js</span><span>Node.js</span><span>MongoDB</span><span>REST API</span>
+                        </div>
                     </div>
                 </div>
 
@@ -137,7 +179,8 @@
                         <p>Data science fundamentals using Python, Pandas, NumPy, Matplotlib and Seaborn for data
                             analysis, visualization, and building effective data pipelines.</p>
                         <div class="timeline-tags">
-                            <span>Python</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span></div>
+                            <span>Python</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span>
+                        </div>
                     </div>
                 </div>
 
@@ -173,6 +216,37 @@
         <i class="fa-solid fa-chevron-up"></i>
         <div class="scroll-top-ring"></div>
     </button>
+    <!-- CERTIFICATE LIGHTBOX MODAL -->
+    <div class="cert-modal-overlay" id="certModal">
+        <div class="cert-modal">
+            <div class="cert-modal-header">
+                <h3 class="cert-modal-title" id="certModalTitle">Certificate</h3>
+                <div class="cert-modal-controls">
+                    <button class="cert-modal-control-btn" id="certZoomOut" aria-label="Zoom Out" title="Zoom Out">
+                        <i class="fa-solid fa-magnifying-glass-minus"></i>
+                    </button>
+                    <span class="cert-zoom-level" id="certZoomLevel">100%</span>
+                    <button class="cert-modal-control-btn" id="certZoomIn" aria-label="Zoom In" title="Zoom In">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </button>
+                    <button class="cert-modal-control-btn" id="certDownload" aria-label="Download" title="Download">
+                        <i class="fa-solid fa-download"></i>
+                    </button>
+                    <button class="cert-modal-close" id="certModalClose" aria-label="Close Modal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="cert-modal-body" id="certModalBody">
+                <div class="cert-modal-loader" id="certModalLoader">
+                    <div class="cert-modal-spinner"></div>
+                    <p>Loading Certificate...</p>
+                </div>
+                <img class="cert-modal-img" id="certModalImg" alt="Certificate" />
+            </div>
+        </div>
+    </div>
+
     <script src="main.js"></script>
 </body>
 

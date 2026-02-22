@@ -1684,6 +1684,35 @@ img {
   border-radius: 50px;
 }
 
+/* Timeline Certificate Button */
+.cert-btn-small {
+  margin-top: 1.2rem;
+  padding: 8px 18px;
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  color: var(--neon-blue);
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all var(--transition);
+  font-family: inherit;
+}
+
+.cert-btn-small:hover {
+  background: rgba(0, 212, 255, 0.2);
+  border-color: var(--neon-blue);
+  box-shadow: var(--glow-blue);
+  transform: translateY(-2px);
+}
+
+.cert-btn-small i {
+  font-size: 0.75rem;
+}
+
 /* ─── 11. EVENTS ───────────────────────────────────────────── */
 .events-section {
   background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0, 212, 255, 0.04), transparent 70%);
